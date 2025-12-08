@@ -98,13 +98,21 @@ export default function Navbar() {
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-3 group">
-                            <div className="relative w-16 h-16 md:w-20 md:h-20 transition-transform duration-300 group-hover:scale-105">
+                            <div className="relative w-24 h-24 md:w-28 md:h-28 transition-transform duration-300 group-hover:scale-105">
                                 <Image
                                     src="/images/WhatsApp Image 2025-12-06 at 16.27.15.jpeg"
                                     alt="Nissing Public School"
                                     fill
                                     className="object-contain rounded-lg"
                                 />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-xl md:text-2xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-300">
+                                    Nissing Public School
+                                </span>
+                                <span className="text-xs md:text-sm text-slate-600 font-medium">
+                                    Empowering the Next Generation
+                                </span>
                             </div>
                         </Link>
 
@@ -154,13 +162,23 @@ export default function Navbar() {
                         >
                             <div className="p-8 space-y-2">
                                 <div className="flex items-center justify-between mb-8">
-                                    <div className="relative w-16 h-16">
-                                        <Image
-                                            src="/images/WhatsApp Image 2025-12-06 at 16.27.15.jpeg"
-                                            alt="Nissing Public School"
-                                            fill
-                                            className="object-contain rounded-lg"
-                                        />
+                                    <div className="flex items-center gap-3">
+                                        <div className="relative w-20 h-20">
+                                            <Image
+                                                src="/images/WhatsApp Image 2025-12-06 at 16.27.15.jpeg"
+                                                alt="Nissing Public School"
+                                                fill
+                                                className="object-contain rounded-lg"
+                                            />
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <span className="text-lg font-bold text-white">
+                                                Nissing Public School
+                                            </span>
+                                            <span className="text-xs text-gray-400">
+                                                Empowering the Next Generation
+                                            </span>
+                                        </div>
                                     </div>
                                     <button
                                         onClick={() => setIsOpen(false)}

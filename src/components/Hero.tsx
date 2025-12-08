@@ -53,17 +53,6 @@ export default function Hero() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="max-w-3xl space-y-8"
                     >
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2, duration: 0.8 }}
-                            className="inline-block"
-                        >
-                            <span className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm font-semibold text-yellow-400 border border-yellow-400/30">
-                                Excellence in Education Since 1995
-                            </span>
-                        </motion.div>
-                        
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-serif">
                             Empowering the{" "}
                             <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent animate-pulse">
