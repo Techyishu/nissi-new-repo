@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 
 // Supported image MIME types
-const ALLOWED_MIME_TYPES = [
+const ALLOWED_IMAGE_TYPES = [
   'image/png',
   'image/jpeg',
   'image/jpg',
@@ -11,7 +11,19 @@ const ALLOWED_MIME_TYPES = [
   'image/svg+xml'
 ];
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+// Supported audio MIME types
+const ALLOWED_AUDIO_TYPES = [
+  'audio/mpeg',
+  'audio/mp3',
+  'audio/ogg',
+  'audio/wav',
+  'audio/x-wav'
+];
+
+const ALLOWED_MIME_TYPES = [...ALLOWED_IMAGE_TYPES, ...ALLOWED_AUDIO_TYPES];
+
+const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5MB for images
+const MAX_AUDIO_SIZE = 10 * 1024 * 1024; // 10MB for audio
 
 export async function POST(request: NextRequest) {
   try {
@@ -41,10 +53,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Determine if it's an audio file
+    const isAudio = ALLOWED_AUDIO_TYPES.includes(file.type);
+    const maxSize = isAudio ? MAX_AUDIO_SIZE : MAX_IMAGE_SIZE;
+
     // Validate file size
-    if (file.size > MAX_FILE_SIZE) {
+    if (file.size > maxSize) {
       return NextResponse.json(
-        { error: `File size exceeds ${MAX_FILE_SIZE / 1024 / 1024}MB limit` },
+        { error: `File size exceeds ${maxSize / 1024 / 1024}MB limit` },
         { status: 400 }
       );
     }
@@ -70,9 +86,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Use 'images' bucket for all uploads (it's configured for public access)
+    const bucketName = 'images';
+
     // Upload to Supabase Storage
     const { data: uploadData, error: uploadError } = await supabaseAdmin.storage
-      .from('images')
+      .from(bucketName)
       .upload(fileName, buffer, {
         contentType: file.type,
         upsert: false
@@ -85,7 +104,7 @@ export async function POST(request: NextRequest) {
 
     // Get public URL
     const { data: urlData } = supabaseAdmin.storage
-      .from('images')
+      .from(bucketName)
       .getPublicUrl(fileName);
 
     return NextResponse.json({

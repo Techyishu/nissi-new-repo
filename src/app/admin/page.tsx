@@ -394,34 +394,76 @@ export default function AdminPanel() {
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-8">
-        {/* Tabs */}
-        <div className="bg-white rounded-2xl shadow-lg mb-6">
-          <div className="flex border-b border-gray-200">
-            {[
-              { id: "gallery" as Tab, name: "Gallery", icon: ImageIcon },
-              { id: "toppers" as Tab, name: "Toppers", icon: Trophy },
-              { id: "staff" as Tab, name: "Staff", icon: Users },
-              { id: "activities" as Tab, name: "Activities", icon: Activity },
-              { id: "contact" as Tab, name: "Contact Forms", icon: Mail },
-              { id: "music" as Tab, name: "Music Settings", icon: Music },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => {
-                  setActiveTab(tab.id);
-                  setShowForm(false);
-                }}
-                className={`flex items-center gap-2 px-6 py-4 font-medium transition-colors ${
-                  activeTab === tab.id
-                    ? "text-[#002147] border-b-2 border-[#002147]"
-                    : "text-gray-600 hover:text-[#002147]"
-                }`}
-              >
-                <tab.icon size={20} />
-                {tab.name}
-              </button>
-            ))}
+      <div className="container mx-auto px-4 py-6">
+        {/* Tabs - Horizontal Navigation */}
+        <div className="mb-6 overflow-x-auto">
+          <div className="inline-flex flex-row items-center gap-2 p-2 bg-[#fffaf2] border border-[#e6d7b8] rounded-xl min-w-full">
+            <button
+              onClick={() => { setActiveTab("gallery"); setShowForm(false); }}
+              className={`shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase text-sm tracking-wide transition-all ${
+                activeTab === "gallery"
+                  ? "bg-[#FEC301] text-[#3d1f0d] shadow-md"
+                  : "bg-white text-[#5b2c1c] hover:bg-[#fff6d8] border border-transparent hover:border-[#FEC301]"
+              }`}
+            >
+              <ImageIcon size={18} />
+              Gallery
+            </button>
+            <button
+              onClick={() => { setActiveTab("toppers"); setShowForm(false); }}
+              className={`shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase text-sm tracking-wide transition-all ${
+                activeTab === "toppers"
+                  ? "bg-[#FEC301] text-[#3d1f0d] shadow-md"
+                  : "bg-white text-[#5b2c1c] hover:bg-[#fff6d8] border border-transparent hover:border-[#FEC301]"
+              }`}
+            >
+              <Trophy size={18} />
+              Toppers
+            </button>
+            <button
+              onClick={() => { setActiveTab("staff"); setShowForm(false); }}
+              className={`shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase text-sm tracking-wide transition-all ${
+                activeTab === "staff"
+                  ? "bg-[#FEC301] text-[#3d1f0d] shadow-md"
+                  : "bg-white text-[#5b2c1c] hover:bg-[#fff6d8] border border-transparent hover:border-[#FEC301]"
+              }`}
+            >
+              <Users size={18} />
+              Staff
+            </button>
+            <button
+              onClick={() => { setActiveTab("activities"); setShowForm(false); }}
+              className={`shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase text-sm tracking-wide transition-all ${
+                activeTab === "activities"
+                  ? "bg-[#FEC301] text-[#3d1f0d] shadow-md"
+                  : "bg-white text-[#5b2c1c] hover:bg-[#fff6d8] border border-transparent hover:border-[#FEC301]"
+              }`}
+            >
+              <Activity size={18} />
+              Activities
+            </button>
+            <button
+              onClick={() => { setActiveTab("contact"); setShowForm(false); }}
+              className={`shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase text-sm tracking-wide transition-all ${
+                activeTab === "contact"
+                  ? "bg-[#FEC301] text-[#3d1f0d] shadow-md"
+                  : "bg-white text-[#5b2c1c] hover:bg-[#fff6d8] border border-transparent hover:border-[#FEC301]"
+              }`}
+            >
+              <Mail size={18} />
+              Contact
+            </button>
+            <button
+              onClick={() => { setActiveTab("music"); setShowForm(false); }}
+              className={`shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold uppercase text-sm tracking-wide transition-all ${
+                activeTab === "music"
+                  ? "bg-[#FEC301] text-[#3d1f0d] shadow-md"
+                  : "bg-white text-[#5b2c1c] hover:bg-[#fff6d8] border border-transparent hover:border-[#FEC301]"
+              }`}
+            >
+              <Music size={18} />
+              Settings
+            </button>
           </div>
         </div>
 
@@ -1013,20 +1055,68 @@ export default function AdminPanel() {
                     <>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Music URL *
+                          Upload Music File *
                         </label>
                         <input
-                          type="text"
-                          value={musicSettings.music_url}
-                          onChange={(e) =>
-                            setMusicSettings({ ...musicSettings, music_url: e.target.value })
-                          }
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002147]"
-                          placeholder="https://example.com/music.mp3 or /music/background.mp3"
+                          type="file"
+                          accept="audio/mpeg,audio/mp3,audio/ogg,audio/wav,audio/x-wav"
+                          onChange={async (e) => {
+                            const file = e.target.files?.[0];
+                            if (!file) return;
+                            
+                            // Validate file type
+                            const allowedTypes = ['audio/mpeg', 'audio/mp3', 'audio/ogg', 'audio/wav', 'audio/x-wav'];
+                            if (!allowedTypes.includes(file.type)) {
+                              alert('Invalid file type. Please upload an audio file (MP3, OGG, or WAV)');
+                              return;
+                            }
+                            
+                            // Validate file size (10MB max for music)
+                            if (file.size > 10 * 1024 * 1024) {
+                              alert('File size must be less than 10MB');
+                              return;
+                            }
+                            
+                            // Upload music file
+                            const uploadFormData = new FormData();
+                            uploadFormData.append('file', file);
+                            uploadFormData.append('folder', 'music');
+                            
+                            try {
+                              const uploadResponse = await fetch("/api/upload", {
+                                method: "POST",
+                                headers: {
+                                  Authorization: `Bearer ${token}`,
+                                },
+                                body: uploadFormData,
+                              });
+                              
+                              const uploadData = await uploadResponse.json();
+                              
+                              if (uploadResponse.ok && uploadData.url) {
+                                setMusicSettings({ ...musicSettings, music_url: uploadData.url });
+                                alert('Music file uploaded successfully!');
+                              } else {
+                                alert(uploadData.error || "Failed to upload music file");
+                              }
+                            } catch (error) {
+                              alert("Failed to upload music file");
+                            }
+                          }}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002147] file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#002147] file:text-white hover:file:bg-[#003370]"
                         />
                         <p className="text-sm text-gray-500 mt-2">
-                          Enter the URL or path to your music file (MP3, OGG, or WAV format)
+                          Upload an audio file (MP3, OGG, or WAV format, max 10MB)
                         </p>
+                        {musicSettings.music_url && (
+                          <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                            <p className="text-sm text-green-800 font-medium mb-2">Current music file:</p>
+                            <audio controls className="w-full">
+                              <source src={musicSettings.music_url} type="audio/mpeg" />
+                              Your browser does not support the audio element.
+                            </audio>
+                          </div>
+                        )}
                       </div>
 
                       <div>
