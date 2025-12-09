@@ -39,11 +39,12 @@ export default function Hero() {
                         fill
                         className="object-cover scale-105"
                         priority
+                        quality={90}
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-slate-800/80 to-slate-900/85" />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-transparent" />
                     {/* Animated gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 via-transparent to-red-600/20 animate-pulse" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 via-transparent to-red-600/20" />
                 </div>
 
                 {/* Content */}
@@ -51,7 +52,7 @@ export default function Hero() {
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
                         className="max-w-3xl space-y-4 sm:space-y-6 md:space-y-8"
                     >
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight font-serif">
@@ -89,7 +90,7 @@ export default function Hero() {
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.15, duration: 0.6 }}
+                            transition={{ delay: index * 0.1, duration: 0.5 }}
                             viewport={{ once: true }}
                             whileHover={{ y: -8, scale: 1.02 }}
                             className={`relative bg-gradient-to-br ${feature.gradient} rounded-2xl p-6 sm:p-8 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden group`}

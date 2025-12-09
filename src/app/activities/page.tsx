@@ -131,12 +131,14 @@ export default function ActivitiesPage() {
                                     whileHover={{ scale: 1.05, y: -8 }}
                                     className="relative h-[300px] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl group"
                                 >
-                                    <Image
-                                        src={src}
-                                        alt={`Activity ${index + 1}`}
-                                        fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
+                                <Image
+                                    src={src}
+                                    alt={`Activity ${index + 1}`}
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                    loading="lazy"
+                                    quality={85}
+                                />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 </motion.div>
                             ))}

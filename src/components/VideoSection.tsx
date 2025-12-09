@@ -32,7 +32,7 @@ export default function VideoSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.4 }}
                     className="text-center mb-16"
                 >
                     <div className="inline-block px-4 py-2 bg-yellow-50 rounded-full text-yellow-700 text-sm font-semibold mb-4">
@@ -54,7 +54,7 @@ export default function VideoSection() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
                     className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl group"
                 >
                     {/* Decorative background */}

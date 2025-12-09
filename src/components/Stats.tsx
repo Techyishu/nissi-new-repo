@@ -49,7 +49,7 @@ export default function Stats() {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.5 }}
                         className="md:col-span-1 md:row-span-2 rounded-3xl overflow-hidden relative group h-[400px] md:h-full shadow-2xl"
                     >
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent z-10" />
@@ -57,8 +57,10 @@ export default function Stats() {
                             src="/images/WhatsApp Image 2025-12-08 at 20.58.40.jpeg"
                             alt="Student Life"
                             fill
-                            className="object-cover group-hover:scale-110 transition-transform duration-700"
+                            className="object-cover group-hover:scale-110 transition-transform duration-500"
                             sizes="(max-width: 768px) 100vw, 33vw"
+                            loading="lazy"
+                            quality={85}
                         />
                         <div className="absolute bottom-8 left-8 right-8 z-20 text-white">
                             <div className="inline-block px-3 py-1 bg-yellow-400/20 backdrop-blur-sm rounded-full text-yellow-300 text-xs font-semibold mb-4 border border-yellow-400/30">
@@ -81,7 +83,7 @@ export default function Stats() {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                transition={{ duration: 0.4, delay: index * 0.05 }}
                                 whileHover={{ y: -8, scale: 1.02 }}
                                 className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
                             >

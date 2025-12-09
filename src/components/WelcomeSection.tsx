@@ -18,7 +18,7 @@ export default function WelcomeSection() {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.5 }}
                         className="space-y-8"
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-50 rounded-full text-yellow-700 text-sm font-semibold mb-4">
@@ -57,7 +57,7 @@ export default function WelcomeSection() {
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.5 }}
                         className="relative h-[500px] lg:h-[600px] w-full"
                     >
                         {/* Decorative background */}
@@ -69,7 +69,9 @@ export default function WelcomeSection() {
                                 src="/images/WhatsApp Image 2025-12-08 at 20.58.42 (1).jpeg"
                                 alt="Students on campus"
                                 fill
-                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                loading="lazy"
+                                quality={85}
                             />
                             {/* Overlay gradient */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
@@ -80,7 +82,7 @@ export default function WelcomeSection() {
                             initial={{ opacity: 0, scale: 0 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.5, type: "spring" }}
+                            transition={{ delay: 0.3, type: "spring", stiffness: 200, damping: 20 }}
                             className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl border border-gray-100"
                         >
                             <div className="text-3xl font-bold text-blue-600">25+</div>
