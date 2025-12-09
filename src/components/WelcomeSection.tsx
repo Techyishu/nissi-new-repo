@@ -8,8 +8,8 @@ export default function WelcomeSection() {
     return (
         <section className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
             {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-100/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+            <div className="absolute top-0 left-0 w-96 h-96 bg-yellow-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-100/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
             
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -21,14 +21,14 @@ export default function WelcomeSection() {
                         transition={{ duration: 0.8 }}
                         className="space-y-8"
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full text-blue-700 text-sm font-semibold mb-4">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-50 rounded-full text-yellow-700 text-sm font-semibold mb-4">
                             <Sparkles size={16} />
                             <span>About Our School</span>
                         </div>
                         
                         <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
                             Welcome To Our{" "}
-                            <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-yellow-500 to-red-600 bg-clip-text text-transparent">
                                 Campus
                             </span>
                         </h2>
@@ -45,7 +45,7 @@ export default function WelcomeSection() {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-700 hover:to-teal-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                            className="group inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                         >
                             Read More
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -61,12 +61,12 @@ export default function WelcomeSection() {
                         className="relative h-[500px] lg:h-[600px] w-full"
                     >
                         {/* Decorative background */}
-                        <div className="absolute -inset-4 bg-gradient-to-br from-blue-500/20 to-teal-500/20 rounded-3xl blur-xl" />
+                        <div className="absolute -inset-4 bg-gradient-to-br from-yellow-500/20 to-red-500/20 rounded-3xl blur-xl" />
                         
                         {/* Main Image */}
                         <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl group">
                             <Image
-                                src="/images/about-hero.png"
+                                src="/images/WhatsApp Image 2025-12-08 at 20.58.42 (1).jpeg"
                                 alt="Students on campus"
                                 fill
                                 className="object-cover group-hover:scale-110 transition-transform duration-700"

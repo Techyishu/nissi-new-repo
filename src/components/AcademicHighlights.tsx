@@ -8,7 +8,7 @@ const highlights = [
     {
         title: "STEM Excellence",
         icon: Microscope,
-        image: "/images/academics-hero.png",
+        image: "/images/WhatsApp Image 2025-12-08 at 20.58.39.jpeg",
         description: "State-of-the-art labs and robotics programs fostering innovation.",
         category: "Science",
         badge: "Top Rated",
@@ -17,7 +17,7 @@ const highlights = [
     {
         title: "Creative Arts",
         icon: Palette,
-        image: "/images/activities-hero.png",
+        image: "/images/WhatsApp Image 2025-12-08 at 20.58.40 (1).jpeg",
         description: "Nurturing expression through visual arts, music, and drama.",
         category: "Arts",
         badge: "Featured",
@@ -26,7 +26,7 @@ const highlights = [
     {
         title: "Athletics Program",
         icon: Dumbbell,
-        image: "/images/facilities-hero.png",
+        image: "/images/WhatsApp Image 2025-12-08 at 20.58.42 (2).jpeg",
         description: "Championing teamwork, discipline, and physical well-being.",
         category: "Sports",
         badge: "Popular",
@@ -35,7 +35,7 @@ const highlights = [
     {
         title: "Global Leadership",
         icon: ArrowRight,
-        image: "/images/about-hero.png",
+        image: "/images/WhatsApp Image 2025-12-08 at 20.58.38.jpeg",
         description: "Preparing students for global challenges and leadership.",
         category: "Leadership",
         badge: "New",

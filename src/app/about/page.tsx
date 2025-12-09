@@ -22,10 +22,10 @@ export default function AboutPage() {
     return (
         <main className="min-h-screen bg-white overflow-hidden mt-[120px]" ref={containerRef}>
             {/* Typographic Hero Section */}
-            <section className="pt-24 pb-20 bg-gradient-to-b from-blue-50 via-white to-white relative overflow-hidden">
+            <section className="pt-24 pb-20 bg-gradient-to-b from-yellow-50 via-white to-white relative overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
-                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500 rounded-full blur-3xl" />
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-500 rounded-full blur-3xl" />
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-500 rounded-full blur-3xl" />
                 </div>
                 <div className="container mx-auto px-6 text-center relative z-10">
                     <motion.div
@@ -33,16 +33,16 @@ export default function AboutPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                     >
-                        <div className="inline-block px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm font-semibold mb-6">
+                        <div className="inline-block px-4 py-2 bg-yellow-100 rounded-full text-yellow-700 text-sm font-semibold mb-6">
                             Our Story
                         </div>
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-slate-900 mb-6 tracking-tight">
                             About{" "}
-                            <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-yellow-500 to-red-600 bg-clip-text text-transparent">
                                 Us
                             </span>
                         </h1>
-                        <div className="h-1.5 w-24 bg-gradient-to-r from-blue-600 to-teal-500 mx-auto rounded-full mb-6" />
+                        <div className="h-1.5 w-24 bg-gradient-to-r from-yellow-500 to-red-600 mx-auto rounded-full mb-6" />
                         <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
                             Nurturing Minds, Building Character, Shaping Futures
                         </p>
@@ -62,8 +62,8 @@ export default function AboutPage() {
                             transition={{ duration: 0.6 }}
                             className="flex-1 space-y-6"
                         >
-                            <div className="flex items-center gap-4 text-blue-600 mb-4">
-                                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
+                            <div className="flex items-center gap-4 text-yellow-600 mb-4">
+                                <div className="w-12 h-12 rounded-xl bg-yellow-100 flex items-center justify-center">
                                     <History size={24} />
                                 </div>
                                 <span className="text-sm font-bold uppercase tracking-widest">Our Legacy</span>
@@ -80,8 +80,8 @@ export default function AboutPage() {
                             transition={{ duration: 0.6 }}
                             className="flex-1 relative h-[450px] w-full rounded-3xl overflow-hidden shadow-2xl group"
                         >
-                            <div className="absolute -inset-4 bg-gradient-to-br from-blue-500/20 to-teal-500/20 rounded-3xl blur-xl" />
-                            <Image src="/images/about-hero.png" alt="History" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                            <div className="absolute -inset-4 bg-gradient-to-br from-yellow-500/20 to-red-500/20 rounded-3xl blur-xl" />
+                            <Image src="/images/WhatsApp Image 2025-12-08 at 20.58.39 (1).jpeg" alt="History" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                         </motion.div>
                     </div>
 
@@ -112,8 +112,8 @@ export default function AboutPage() {
                             transition={{ duration: 0.6 }}
                             className="flex-1 relative h-[450px] w-full rounded-3xl overflow-hidden shadow-2xl group"
                         >
-                            <div className="absolute -inset-4 bg-gradient-to-br from-teal-500/20 to-blue-500/20 rounded-3xl blur-xl" />
-                            <Image src="/images/academics-hero.png" alt="Mission" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                            <div className="absolute -inset-4 bg-gradient-to-br from-red-500/20 to-yellow-500/20 rounded-3xl blur-xl" />
+                            <Image src="/images/WhatsApp Image 2025-12-08 at 20.58.42 (2).jpeg" alt="Mission" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                         </motion.div>
                     </div>
                 </div>

@@ -34,7 +34,6 @@ export default function Navbar() {
     const navLinks = [
         { name: "Home", href: "/" },
         { name: "About", href: "/about" },
-        { name: "Academics", href: "/academics" },
         { name: "Facilities", href: "/facilities" },
         { name: "Activities", href: "/activities" },
         { name: "Gallery", href: "/gallery" },
@@ -94,11 +93,11 @@ export default function Navbar() {
                 transition={{ duration: 0.3 }}
                 className="relative z-50"
             >
-                <div className="container mx-auto px-6 py-4">
-                    <div className="flex items-center justify-between">
+                <div className="w-full px-2 md:px-3 lg:px-4 xl:px-6 py-4">
+                    <div className="max-w-7xl mx-auto flex items-center justify-between">
                         {/* Logo */}
-                        <Link href="/" className="flex items-center gap-3 group">
-                            <div className="relative w-24 h-24 md:w-28 md:h-28 transition-transform duration-300 group-hover:scale-105">
+                        <Link href="/" className="flex items-center gap-2 md:gap-3 group shrink-0">
+                            <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 transition-transform duration-300 group-hover:scale-105 shrink-0">
                                 <Image
                                     src="/images/WhatsApp Image 2025-12-06 at 16.27.15.jpeg"
                                     alt="Nissing Public School"
@@ -106,11 +105,11 @@ export default function Navbar() {
                                     className="object-contain rounded-lg"
                                 />
                             </div>
-                            <div className="flex flex-col">
-                                <span className="text-xl md:text-2xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors duration-300">
+                            <div className="flex flex-col min-w-0">
+                                <span className="text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-slate-800 group-hover:text-yellow-600 transition-colors duration-300 whitespace-nowrap leading-tight">
                                     Nissing Public School
                                 </span>
-                                <span className="text-xs md:text-sm text-slate-600 font-medium">
+                                <span className="text-[10px] md:text-xs lg:text-sm text-slate-600 font-medium whitespace-nowrap leading-tight">
                                     Empowering the Next Generation
                                 </span>
                             </div>
@@ -122,10 +121,10 @@ export default function Navbar() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="relative px-4 py-2 text-sm font-semibold text-slate-800 hover:text-blue-600 transition-colors duration-300 group"
+                                    className="relative px-4 py-2 text-sm font-semibold text-slate-800 hover:text-yellow-600 transition-colors duration-300 group"
                                 >
                                     <span className="relative z-10">{link.name}</span>
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-teal-500 group-hover:w-full transition-all duration-300" />
+                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-red-600 group-hover:w-full transition-all duration-300" />
                                 </Link>
                             ))}
                         </nav>
@@ -133,7 +132,7 @@ export default function Navbar() {
                         {/* Mobile Menu Toggle */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="lg:hidden w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 to-teal-500 text-white flex items-center justify-center hover:shadow-lg hover:scale-105 transition-all duration-300"
+                            className="lg:hidden w-11 h-11 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 text-slate-900 flex items-center justify-center hover:shadow-lg hover:scale-105 transition-all duration-300"
                             aria-label="Toggle menu"
                         >
                             {isOpen ? <X size={22} /> : <Menu size={22} />}
@@ -161,25 +160,7 @@ export default function Navbar() {
                             className="fixed inset-y-0 right-0 w-80 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 z-[101] overflow-y-auto lg:hidden shadow-2xl"
                         >
                             <div className="p-8 space-y-2">
-                                <div className="flex items-center justify-between mb-8">
-                                    <div className="flex items-center gap-3">
-                                        <div className="relative w-20 h-20">
-                                            <Image
-                                                src="/images/WhatsApp Image 2025-12-06 at 16.27.15.jpeg"
-                                                alt="Nissing Public School"
-                                                fill
-                                                className="object-contain rounded-lg"
-                                            />
-                                        </div>
-                                        <div className="flex flex-col">
-                                            <span className="text-lg font-bold text-white">
-                                                Nissing Public School
-                                            </span>
-                                            <span className="text-xs text-gray-400">
-                                                Empowering the Next Generation
-                                            </span>
-                                        </div>
-                                    </div>
+                                <div className="flex items-center justify-end mb-8">
                                     <button
                                         onClick={() => setIsOpen(false)}
                                         className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
@@ -205,35 +186,6 @@ export default function Navbar() {
                                         </Link>
                                     </motion.div>
                                 ))}
-                                
-                                <div className="pt-8 mt-8 border-t border-white/10">
-                                    <div className="flex items-center gap-3 mb-6">
-                                        {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                                            <Link
-                                                key={i}
-                                                href="#"
-                                                className="w-11 h-11 rounded-xl bg-white/10 hover:bg-yellow-400 hover:text-slate-900 text-white flex items-center justify-center transition-all duration-300"
-                                                aria-label={`Social media link ${i + 1}`}
-                                            >
-                                                <Icon size={18} />
-                                            </Link>
-                                        ))}
-                                    </div>
-                                    <div className="space-y-3 text-sm text-gray-400">
-                                        <div className="flex items-center gap-2">
-                                            <MapPin size={14} className="text-yellow-400" />
-                                            <span>Nissing Public School, Buta colony, Nissing, karnal, Haryana</span>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <Mail size={14} className="text-yellow-400" />
-                                            <span>npsnissing@gmail.com</span>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <Phone size={14} className="text-yellow-400" />
-                                            <span>+91 9729173399</span>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </motion.div>
                     </>

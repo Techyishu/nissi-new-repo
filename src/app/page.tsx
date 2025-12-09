@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
-import AcademicHighlights from "@/components/AcademicHighlights";
+import VideoSection from "@/components/VideoSection";
 import GalleryMarquee from "@/components/GalleryMarquee";
 
 import WelcomeSection from "@/components/WelcomeSection";
@@ -10,7 +10,7 @@ export default function Home() {
     <main className="min-h-screen bg-white mt-[120px]">
       <Hero />
       <WelcomeSection />
-      <AcademicHighlights />
+      <VideoSection />
       <Stats />
       <GalleryMarquee />
     </main>

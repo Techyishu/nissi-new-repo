@@ -20,11 +20,11 @@ const stats = [
         description: "Personalized attention for every student's growth.",
     },
     {
-        label: "AP Courses",
+        label: "Academic Programs",
         value: "25+",
         icon: BookOpen,
         gradient: "from-teal-500 to-teal-600",
-        description: "Rigorous academic curriculum for advanced learning.",
+        description: "Comprehensive curriculum designed for holistic development.",
     },
     {
         label: "Nationalities",
@@ -54,7 +54,7 @@ export default function Stats() {
                     >
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent z-10" />
                         <Image
-                            src="/images/home-hero.png"
+                            src="/images/WhatsApp Image 2025-12-08 at 20.58.40.jpeg"
                             alt="Student Life"
                             fill
                             className="object-cover group-hover:scale-110 transition-transform duration-700"
