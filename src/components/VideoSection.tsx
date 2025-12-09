@@ -14,6 +14,7 @@ export default function VideoSection() {
                 videoRef.current.pause();
             } else {
                 videoRef.current.play();
+                videoRef.current.muted = false;
             }
             setIsPlaying(!isPlaying);
         }
@@ -66,8 +67,18 @@ export default function VideoSection() {
                             src="/images/WhatsApp Video 2025-12-08 at 20.58.39.mp4"
                             className="w-full h-full object-cover"
                             loop
-                            muted
                             playsInline
+                            preload="none"
+                            onLoadedData={() => {
+                                if (videoRef.current) {
+                                    videoRef.current.playbackRate = 1.0;
+                                }
+                            }}
+                            onCanPlay={() => {
+                                if (videoRef.current && isPlaying) {
+                                    videoRef.current.play();
+                                }
+                            }}
                         />
                         
                         {/* Overlay when paused */}
