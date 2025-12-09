@@ -1,35 +1,40 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('❌ Supabase environment variables are not set!');
-  console.error('Please configure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in .env.local');
-  throw new Error('Missing required Supabase environment variables');
-}
+// Create a dummy client for build time when env vars are not available
+const createSupabaseClient = (): SupabaseClient => {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    // During build time, return a mock client that won't crash
+    // Runtime errors will be handled by API routes
+    console.warn('⚠️ Supabase environment variables not set. Database features disabled.');
+    return createClient('https://placeholder.supabase.co', 'placeholder-key', {
+      auth: { persistSession: false, autoRefreshToken: false }
+    });
+  }
+  
+  return createClient(supabaseUrl, supabaseAnonKey, {
+    auth: {
+      persistSession: true,
+      autoRefreshToken: true,
+    },
+  });
+};
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  auth: {
-    persistSession: true,
-    autoRefreshToken: true,
-  },
-});
+export const supabase = createSupabaseClient();
 
 // Server-side client for admin operations
 export const createServerClient = () => {
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+  const url = supabaseUrl || 'https://placeholder.supabase.co';
+  const key = serviceRoleKey || supabaseAnonKey || 'placeholder-key';
+  
   if (!serviceRoleKey) {
-    console.error('⚠️ SUPABASE_SERVICE_ROLE_KEY is not set. Admin features will not work.');
-    // Return a client with anon key as fallback (will have limited permissions)
-    return createClient(supabaseUrl, supabaseAnonKey, {
-      auth: {
-        autoRefreshToken: false,
-        persistSession: false
-      }
-    });
+    console.warn('⚠️ SUPABASE_SERVICE_ROLE_KEY is not set. Admin features will not work.');
   }
-  return createClient(supabaseUrl, serviceRoleKey, {
+  
+  return createClient(url, key, {
     auth: {
       autoRefreshToken: false,
       persistSession: false
