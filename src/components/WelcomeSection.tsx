@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function WelcomeSection() {
@@ -42,14 +43,16 @@ export default function WelcomeSection() {
                             </p>
                         </div>
                         
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="group inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                        >
-                            Read More
-                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                        </motion.button>
+                        <Link href="/about">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="group inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                            >
+                                Read More
+                                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                            </motion.button>
+                        </Link>
                     </motion.div>
 
                     {/* Image Content */}
@@ -66,8 +69,8 @@ export default function WelcomeSection() {
                         {/* Main Image */}
                         <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl group">
                             <Image
-                                src="/images/WhatsApp Image 2025-12-08 at 20.58.42 (1).jpeg"
-                                alt="Students on campus"
+                                src="/images/WhatsApp Image 2025-12-08 at 20.58.39.jpeg"
+                                alt="School Building"
                                 fill
                                 className="object-cover group-hover:scale-110 transition-transform duration-500"
                                 loading="lazy"
@@ -85,7 +88,7 @@ export default function WelcomeSection() {
                             transition={{ delay: 0.3, type: "spring", stiffness: 200, damping: 20 }}
                             className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl border border-gray-100"
                         >
-                            <div className="text-3xl font-bold text-blue-600">25+</div>
+                            <div className="text-3xl font-bold text-blue-600">20+</div>
                             <div className="text-sm text-gray-600 font-medium">Years of Excellence</div>
                         </motion.div>
                     </motion.div>

@@ -54,7 +54,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-6">
                         <div className="flex items-center gap-2">
                             <MapPin size={13} className="text-yellow-400 shrink-0" />
-                            <span className="text-gray-300">Nissing Public School, Buta colony, Nissing, karnal, Haryana</span>
+                            <span className="text-gray-300">Nissing Public School, Buta Colony, Nissing, Karnal, Haryana</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Mail size={13} className="text-yellow-400 shrink-0" />

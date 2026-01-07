@@ -34,7 +34,7 @@ export default function Hero() {
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/WhatsApp Image 2025-12-08 at 20.58.42.jpeg"
+                        src="/images/WhatsApp Image 2025-12-08 at 20.58.39.jpeg"
                         alt="Campus Background"
                         fill
                         className="object-cover scale-105"
@@ -55,6 +55,9 @@ export default function Hero() {
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         className="max-w-3xl space-y-4 sm:space-y-6 md:space-y-8"
                     >
+                        <div className="inline-block px-4 py-2 bg-yellow-400/20 backdrop-blur-sm rounded-full text-yellow-300 text-sm font-semibold mb-4 border border-yellow-400/30">
+                            Activity Based Digital School
+                        </div>
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight font-serif">
                             Empowering the{" "}
                             <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent animate-pulse">

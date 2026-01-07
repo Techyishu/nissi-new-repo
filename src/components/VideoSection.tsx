@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
+import { Play, ArrowRight } from "lucide-react";
 import { useState, useRef } from "react";
+import Link from "next/link";
 
 export default function VideoSection() {
     const [isPlaying, setIsPlaying] = useState(false);
@@ -44,9 +45,19 @@ export default function VideoSection() {
                             Our School
                         </span>
                     </h2>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-6">
                         Watch our students in action and see what makes Nissing Public School special
                     </p>
+                    <Link href="/gallery">
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="group inline-flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-slate-900 px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                        >
+                            View Gallery
+                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        </motion.button>
+                    </Link>
                 </motion.div>
 
                 {/* Video Container */}

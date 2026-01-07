@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Youtube, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -47,17 +47,37 @@ export default function Footer() {
                         <p className="text-gray-300 leading-relaxed text-sm">
                             Empowering students to become global leaders through excellence in education and character development.
                         </p>
-                        <div className="flex gap-3">
-                            {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                        <div className="space-y-3">
+                            <p className="text-white font-semibold text-sm">Follow us on</p>
+                            <div className="flex gap-3">
                                 <a
-                                    key={i}
-                                    href="#"
-                                    className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-gradient-to-br hover:from-yellow-500 hover:to-orange-500 hover:scale-110 transition-all duration-300 group"
-                                    aria-label={`Social media link ${i + 1}`}
+                                    href="https://www.facebook.com/share/1A688fetr4/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 hover:scale-110 transition-all duration-300 group"
+                                    aria-label="Facebook"
                                 >
-                                    <Icon size={18} className="group-hover:scale-110 transition-transform" />
+                                    <Facebook size={18} className="group-hover:scale-110 transition-transform" />
                                 </a>
-                            ))}
+                                <a
+                                    href="https://www.instagram.com/npsnissing?igsh=cDZycGlmamNzZnVx"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 hover:scale-110 transition-all duration-300 group"
+                                    aria-label="Instagram"
+                                >
+                                    <Instagram size={18} className="group-hover:scale-110 transition-transform" />
+                                </a>
+                                <a
+                                    href="https://youtube.com/@npsnissing9?si=E92BCgbxJ-d7jfO3"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-gradient-to-br hover:from-red-600 hover:to-red-700 hover:scale-110 transition-all duration-300 group"
+                                    aria-label="YouTube"
+                                >
+                                    <Youtube size={18} className="group-hover:scale-110 transition-transform" />
+                                </a>
+                            </div>
                         </div>
                     </motion.div>
 
@@ -97,7 +117,7 @@ export default function Footer() {
                                 <MapPin size={18} className="text-yellow-400 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                                 <span className="text-sm leading-relaxed">
                                     Nissing Public School,<br />
-                                    Buta colony, Nissing, karnal, Haryana
+                                    Buta Colony, Nissing, Karnal, Haryana
                                 </span>
                             </li>
                             <li className="flex items-center gap-3 text-gray-300 group">

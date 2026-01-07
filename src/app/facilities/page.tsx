@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Library, Monitor, FlaskConical, Trophy, Bus, Utensils } from "lucide-react";
+import { Library, Monitor, FlaskConical, Trophy, Bus } from "lucide-react";
 
 const facilities = [
     {
@@ -30,11 +30,6 @@ const facilities = [
         icon: Bus,
         title: "Transport Services",
         description: "Safe and reliable transport facility with GPS-enabled buses covering all major routes in the city and surrounding areas. Our fleet is regularly maintained, and all drivers are trained professionals committed to student safety."
-    },
-    {
-        icon: Utensils,
-        title: "Cafeteria & Dining",
-        description: "A spacious, hygienic cafeteria serving nutritious and balanced meals. Our kitchen follows strict hygiene standards and offers a variety of healthy food options. The dining area provides a comfortable space for students to enjoy their meals and socialize."
     }
 ];
 

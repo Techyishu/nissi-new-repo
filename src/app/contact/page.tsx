@@ -159,7 +159,7 @@ export default function ContactPage() {
                             <h2 className="text-4xl font-serif font-bold text-slate-900 mb-10">Get in Touch</h2>
                             <div className="space-y-8">
                                 {[
-                                    { icon: MapPin, title: "Address", content: ["Nissing Public School,", "Buta colony, Nissing, karnal, Haryana"], gradient: "from-yellow-500 to-yellow-600" },
+                                    { icon: MapPin, title: "Address", content: ["Nissing Public School,", "Buta Colony, Nissing, Karnal, Haryana"], gradient: "from-yellow-500 to-yellow-600" },
                                     { icon: Phone, title: "Phone", content: ["+91 9729173399"], gradient: "from-red-500 to-red-600" },
                                     { icon: Mail, title: "Email", content: ["npsnissing@gmail.com"], gradient: "from-orange-500 to-orange-600" },
                                     { icon: Clock, title: "Office Hours", content: ["Monday - Saturday: 8:00 AM - 4:00 PM", "Sunday: Closed"], gradient: "from-yellow-500 to-red-600" }
@@ -210,12 +210,13 @@ export default function ContactPage() {
                             className="mt-12 h-64 rounded-2xl overflow-hidden shadow-inner border border-gray-200"
                         >
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.688636734674!2d77.3478953150824!3d28.61189598242596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce50000000001%3A0x1234567890abcdef!2sSR%20INTERNATIONAL!5e0!3m2!1sen!2sin!4v1634567890123!5m2!1sen!2sin"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.688636734674!2d77.3478953150824!3d28.61189598242596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce50000000001%3A0x1234567890abcdef!2sNissing%20Public%20School%2C%20Buta%20Colony%2C%20Nissing%2C%20Karnal%2C%20Haryana!5e0!3m2!1sen!2sin!4v1634567890123!5m2!1sen!2sin"
                                 width="100%"
                                 height="100%"
-                                style={{ border: 0, filter: "grayscale(100%)" }}
+                                style={{ border: 0 }}
                                 allowFullScreen
                                 loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
                             />
                         </motion.div>
                     </div>
